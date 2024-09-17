@@ -1,0 +1,10 @@
+ryerson/ca/searchGame/endpoint/SearchResource.class
+ryerson/ca/searchGame/business/SearchBusiness.class
+ryerson/ca/searchGame/persistance/Game_CRUD.class
+ryerson/ca/searchGame/endpoint/SearchUser.class
+ryerson/ca/searchGame/helper/GamesXML.class
+ryerson/ca/searchGame/helper/UsersXML.class
+ryerson/ca/searchGame/helper/Game.class
+ryerson/ca/searchGame/persistance/User_CRUD.class
+ryerson/ca/searchGame/endpoint/ApplicationConfig.class
+ryerson/ca/searchGame/helper/User.class

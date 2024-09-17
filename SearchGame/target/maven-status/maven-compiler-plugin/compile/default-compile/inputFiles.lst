@@ -1,0 +1,10 @@
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/helper/Game.java
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/business/SearchBusiness.java
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/helper/UsersXML.java
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/endpoint/SearchResource.java
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/helper/User.java
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/persistance/User_CRUD.java
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/endpoint/ApplicationConfig.java
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/endpoint/SearchUser.java
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/helper/GamesXML.java
+/home/student/NetBeansProjects/SearchGame/src/main/java/ryerson/ca/searchGame/persistance/Game_CRUD.java
