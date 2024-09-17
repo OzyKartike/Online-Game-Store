@@ -84,5 +84,6 @@ ownership and customization within the platform ecosystem.
 ![image](https://i.postimg.cc/XJfvVjJL/Screenshot-2024-02-05-221422.png)
 
 
-### Deployed on google cloud with following images
+### Google Cloud
+Deployed on google cloud with following images. Used Docker and kubernetes.
 ![image](https://i.postimg.cc/wMrZZJpG/images.png)
