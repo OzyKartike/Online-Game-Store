@@ -35,6 +35,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
         run: |
+          echo "ECR_REGISTRY: $ECR_REGISTRY"  # Debug line to print ECR_REGISTRY value
           docker build -t frontend-service:latest ./FrontEnd
           docker tag frontend-service:latest $ECR_REGISTRY/frontend-service:latest
           docker push $ECR_REGISTRY/frontend-service:latest
@@ -44,6 +45,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
         run: |
+          echo "ECR_REGISTRY: $ECR_REGISTRY"  # Debug line to print ECR_REGISTRY value
           docker build -t searchgame-service:latest ./SearchGame
           docker tag searchgame-service:latest $ECR_REGISTRY/searchgame-service:latest
           docker push $ECR_REGISTRY/searchgame-service:latest
@@ -53,6 +55,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
         run: |
+          echo "ECR_REGISTRY: $ECR_REGISTRY"  # Debug line to print ECR_REGISTRY value
           docker build -t viewprofile-service:latest ./ViewProfile
           docker tag viewprofile-service:latest $ECR_REGISTRY/viewprofile-service:latest
           docker push $ECR_REGISTRY/viewprofile-service:latest
