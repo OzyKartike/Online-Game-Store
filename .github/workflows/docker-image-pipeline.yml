@@ -14,19 +14,23 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      # Step 2: Set up Docker Buildx
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      # Step 3: Log in to Amazon ECR
-      - name: Log in to Amazon ECR
-        uses: aws-actions/amazon-ecr-login@v1
+      # Step 2: Configure AWS credentials (sets the environment for subsequent steps)
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # Step 4: Build and push FrontEnd Docker image
+      # Step 3: Set up Docker Buildx
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      # Step 4: Log in to Amazon ECR
+      - name: Log in to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v1
+
+      # Step 5: Build and push FrontEnd Docker image
       - name: Build and push FrontEnd Docker image
         env:
           ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
@@ -35,7 +39,7 @@ jobs:
           docker tag frontend-service:latest $ECR_REGISTRY/frontend-service:latest
           docker push $ECR_REGISTRY/frontend-service:latest
 
-      # Step 5: Build and push SearchGame Docker image
+      # Step 6: Build and push SearchGame Docker image
       - name: Build and push SearchGame Docker image
         env:
           ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
@@ -44,7 +48,7 @@ jobs:
           docker tag searchgame-service:latest $ECR_REGISTRY/searchgame-service:latest
           docker push $ECR_REGISTRY/searchgame-service:latest
 
-      # Step 6: Build and push ViewProfile Docker image
+      # Step 7: Build and push ViewProfile Docker image
       - name: Build and push ViewProfile Docker image
         env:
           ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
