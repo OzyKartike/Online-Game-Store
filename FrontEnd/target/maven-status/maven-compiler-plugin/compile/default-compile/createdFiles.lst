@@ -1,8 +1,8 @@
 ryerson/ca/helper/User.class
 ryerson/ca/business/XMLParser.class
-ryerson/ca/helper/Game.class
 ryerson/ca/business/Business.class
+ryerson/ca/helper/Game.class
 ryerson/ca/frontend/FrontEnd.class
 ryerson/ca/helper/UsersXML.class
-ryerson/ca/helper/GamesXML.class
 ryerson/ca/frontend/Authenticate.class
+ryerson/ca/helper/GamesXML.class

@@ -1,6 +1,6 @@
 ryerson/ca/Profile/persistence/VProfile_CRUD.class
-ryerson/ca/Profile/helper/VProfileXML.class
 ryerson/ca/Profile/endpoint/ApplicationConfig.class
-ryerson/ca/Profile/helper/VProfile.class
+ryerson/ca/Profile/helper/VProfileXML.class
 ryerson/ca/Profile/endpoint/VProfileResource.class
+ryerson/ca/Profile/helper/VProfile.class
 ryerson/ca/Profile/business/VProfileBusiness.class

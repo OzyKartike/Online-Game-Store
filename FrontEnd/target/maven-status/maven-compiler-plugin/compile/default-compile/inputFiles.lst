@@ -1,8 +1,8 @@
-/home/student/NetBeansProjects/FrontEnd/src/main/java/ryerson/ca/business/Business.java
-/home/student/NetBeansProjects/FrontEnd/src/main/java/ryerson/ca/frontend/FrontEnd.java
-/home/student/NetBeansProjects/FrontEnd/src/main/java/ryerson/ca/helper/UsersXML.java
-/home/student/NetBeansProjects/FrontEnd/src/main/java/ryerson/ca/frontend/Authenticate.java
-/home/student/NetBeansProjects/FrontEnd/src/main/java/ryerson/ca/helper/User.java
-/home/student/NetBeansProjects/FrontEnd/src/main/java/ryerson/ca/helper/GamesXML.java
-/home/student/NetBeansProjects/FrontEnd/src/main/java/ryerson/ca/helper/Game.java
-/home/student/NetBeansProjects/FrontEnd/src/main/java/ryerson/ca/business/XMLParser.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/FrontEnd/src/main/java/ryerson/ca/helper/User.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/FrontEnd/src/main/java/ryerson/ca/helper/GamesXML.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/FrontEnd/src/main/java/ryerson/ca/business/XMLParser.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/FrontEnd/src/main/java/ryerson/ca/helper/UsersXML.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/FrontEnd/src/main/java/ryerson/ca/frontend/FrontEnd.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/FrontEnd/src/main/java/ryerson/ca/business/Business.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/FrontEnd/src/main/java/ryerson/ca/helper/Game.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/FrontEnd/src/main/java/ryerson/ca/frontend/Authenticate.java

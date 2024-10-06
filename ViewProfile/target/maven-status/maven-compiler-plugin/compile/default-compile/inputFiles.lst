@@ -1,6 +1,6 @@
-/home/student/NetBeansProjects/ViewProfile/src/main/java/ryerson/ca/Profile/persistence/VProfile_CRUD.java
-/home/student/NetBeansProjects/ViewProfile/src/main/java/ryerson/ca/Profile/endpoint/ApplicationConfig.java
-/home/student/NetBeansProjects/ViewProfile/src/main/java/ryerson/ca/Profile/helper/VProfileXML.java
-/home/student/NetBeansProjects/ViewProfile/src/main/java/ryerson/ca/Profile/endpoint/VProfileResource.java
-/home/student/NetBeansProjects/ViewProfile/src/main/java/ryerson/ca/Profile/helper/VProfile.java
-/home/student/NetBeansProjects/ViewProfile/src/main/java/ryerson/ca/Profile/business/VProfileBusiness.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/ViewProfile/src/main/java/ryerson/ca/Profile/endpoint/VProfileResource.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/ViewProfile/src/main/java/ryerson/ca/Profile/persistence/VProfile_CRUD.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/ViewProfile/src/main/java/ryerson/ca/Profile/business/VProfileBusiness.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/ViewProfile/src/main/java/ryerson/ca/Profile/helper/VProfileXML.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/ViewProfile/src/main/java/ryerson/ca/Profile/endpoint/ApplicationConfig.java
+/Users/ozy/Desktop/Coding_Projects/dockerGameStore/Online-Game-Store/ViewProfile/src/main/java/ryerson/ca/Profile/helper/VProfile.java
