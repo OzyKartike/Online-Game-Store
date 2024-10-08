@@ -11,11 +11,11 @@ jobs:
     steps:
       # Step 1: Check out the repository code
       - name: Check out code
-        uses: actions/checkout@v3 # Updated to v3 for compatibility with Node.js 20
+        uses: actions/checkout@v2
 
       # Step 2: Configure AWS credentials (sets the environment for subsequent steps)
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2 # Updated to v2
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -23,11 +23,11 @@ jobs:
 
       # Step 3: Set up Docker Buildx
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2 # This is already the latest
+        uses: docker/setup-buildx-action@v2
 
       # Step 4: Log in to Amazon ECR
       - name: Log in to Amazon ECR
-        uses: aws-actions/amazon-ecr-login@v2 # Updated to v2
+        uses: aws-actions/amazon-ecr-login@v1
 
       # Step 5: Build and push FrontEnd Docker image
       - name: Build and push FrontEnd Docker image
@@ -65,11 +65,11 @@ jobs:
     steps:
       # Step 1: Check out the repository code
       - name: Check out code
-        uses: actions/checkout@v3 # Updated to v3 for compatibility
+        uses: actions/checkout@v2
 
       # Step 2: Configure AWS credentials (sets the environment for subsequent steps)
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2 # Updated to v2
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -78,12 +78,18 @@ jobs:
       # Step 3: Deploy to ECS
       - name: Deploy to ECS
         run: |
-          # Get the current task definition
+          # Check if the task definition exists
           TASK_DEF=$(aws ecs describe-task-definition --task-definition my-game-store-task)
+
+          # Log the task definition to debug
+          echo "Current Task Definition: $TASK_DEF"
 
           # Create a new revision of the task definition with the new image
           NEW_TASK_DEF=$(echo $TASK_DEF | jq --arg IMAGE "724772065286.dkr.ecr.us-east-1.amazonaws.com/frontend-service:latest" \
             '.taskDefinition | .containerDefinitions[0].image = $IMAGE | del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .compatibilities, .registeredAt, .registeredBy)')
+
+          # Log the new task definition to debug
+          echo "New Task Definition: $NEW_TASK_DEF"
 
           # Register the new task definition
           NEW_REVISION=$(echo $NEW_TASK_DEF | aws ecs register-task-definition --cli-input-json file:///dev/stdin | jq -r .taskDefinition.taskDefinitionArn)
