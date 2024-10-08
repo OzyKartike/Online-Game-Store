@@ -1,0 +1,26 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+*.tfplan
+
+# Docker files
+**/Dockerfile
+**/*.dockerignore
+**/target/
+**/*.war
+**/*.jar
+
+# IDE and Editor files
+*.swp
+*~
+.idea/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

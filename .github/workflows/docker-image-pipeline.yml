@@ -1,4 +1,4 @@
-name: Build and Push Docker Images to AWS ECR
+name: CI/CD Pipeline for AWS ECR and ECS
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
     steps:
       # Step 1: Check out the repository code
       - name: Check out code
@@ -59,3 +58,35 @@ jobs:
           docker build -t viewprofile-service:latest ./ViewProfile
           docker tag viewprofile-service:latest $ECR_REGISTRY/viewprofile-service:latest
           docker push $ECR_REGISTRY/viewprofile-service:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-push # Wait for build-and-push to complete before starting this job
+    steps:
+      # Step 1: Check out the repository code
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # Step 2: Configure AWS credentials (sets the environment for subsequent steps)
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Step 3: Deploy to ECS
+      - name: Deploy to ECS
+        run: |
+          # Get the current task definition
+          TASK_DEF=$(aws ecs describe-task-definition --task-definition my-game-store-task)
+
+          # Create a new revision of the task definition with the new image
+          NEW_TASK_DEF=$(echo $TASK_DEF | jq --arg IMAGE "724772065286.dkr.ecr.us-east-1.amazonaws.com/frontend-service:latest" \
+            '.taskDefinition | .containerDefinitions[0].image = $IMAGE | del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .compatibilities, .registeredAt, .registeredBy)')
+
+          # Register the new task definition
+          NEW_REVISION=$(echo $NEW_TASK_DEF | aws ecs register-task-definition --cli-input-json file:///dev/stdin | jq -r .taskDefinition.taskDefinitionArn)
+
+          # Update the service to use the new task definition
+          aws ecs update-service --cluster my-game-store-cluster --service my-game-store-service --force-new-deployment --task-definition $NEW_REVISION
